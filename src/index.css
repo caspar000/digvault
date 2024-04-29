@@ -7,3 +7,7 @@
 * {
   font-family: 'Inter', sans-serif;
 }
+
+.input-select > span {
+  @apply pt-0;
+}
