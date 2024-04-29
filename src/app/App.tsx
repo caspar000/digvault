@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
-import { HomePage } from '@/pages/HomePage'
+import { CloudPage } from '@/pages/cloud/CloudPage'
+import { HomePage } from '@/pages/home/HomePage'
 
 import { AppRoutePath } from './appRoutePath'
 
@@ -10,6 +11,7 @@ const App = () => {
       <Router>
         <Routes>
           <Route path={AppRoutePath.HOME()} element={<HomePage />} />
+          <Route path={AppRoutePath.CLOUD()} element={<CloudPage />} />
         </Routes>
       </Router>
     </>
