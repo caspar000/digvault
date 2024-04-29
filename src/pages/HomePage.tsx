@@ -15,6 +15,8 @@ import { Header } from '@/components/Header/Header'
 import { BenefitsAndCoreValuesMock } from '@/mocks/HomePageMocks'
 
 // TODO: Cleanup Code
+// TODO: Separate into components
+// TODO: Create HomePage Mocks
 
 export const HomePage = () => {
   return (
