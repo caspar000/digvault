@@ -24,8 +24,8 @@ export const SignUpPage = () => {
       value: country.countryCallingCode
     }))
 
-  // const [signUpStep, setSignUpStep] = useState('personal_information')
-  const [signUpStep, setSignUpStep] = useState('security_and_password')
+  const [signUpStep, setSignUpStep] = useState('personal_information')
+  // const [signUpStep, setSignUpStep] = useState('security_and_password')
 
   return (
     <div className="h-full min-h-[100vh] w-full max-w-[100vw]">
