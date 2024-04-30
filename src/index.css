@@ -11,3 +11,11 @@
 .input-select > span {
   @apply pt-0;
 }
+
+th {
+  @apply !pt-4;
+}
+
+th, tr, td {
+  @apply py-2;
+}
