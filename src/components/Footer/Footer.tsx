@@ -56,14 +56,23 @@ export const Footer = () => {
           </div>
           <div className="flex flex-col gap-2">
             <p className="font-medium leading-6 text-[#fff]">Legal</p>
-            <a href="#" className="text-xs leading-[20px] text-[#8D91A1]">
+            <a
+              href={AppRoutePath.LEGAL()}
+              className="text-xs leading-[20px] text-[#8D91A1]"
+            >
+              Legals
+            </a>
+            <a
+              href={AppRoutePath.PRIVACY()}
+              className="text-xs leading-[20px] text-[#8D91A1]"
+            >
               Privacy
             </a>
-            <a href="#" className="text-xs leading-[20px] text-[#8D91A1]">
+            <a
+              href={AppRoutePath.TERMS()}
+              className="text-xs leading-[20px] text-[#8D91A1]"
+            >
               Terms & Conditions
-            </a>
-            <a href="#" className="text-xs leading-[20px] text-[#8D91A1]">
-              Cookies Policy
             </a>
           </div>
           {/* TODO: Language Switcher */}

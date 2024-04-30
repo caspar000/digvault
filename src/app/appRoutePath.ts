@@ -5,5 +5,8 @@ export const AppRoutePath = {
   CLOUD: () => '/cloud',
   SIGNUP: () => '/signup',
   LOGIN: () => '/login',
-  DASHBOARD: () => '/dashboard'
+  DASHBOARD: () => '/dashboard',
+  LEGAL: () => '/legal',
+  PRIVACY: () => '/privacy',
+  TERMS: () => '/terms'
 }

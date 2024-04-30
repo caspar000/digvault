@@ -1,16 +1,47 @@
 import { Typography } from '@material-tailwind/react'
-import { useState } from 'react'
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import { useCountries } from 'use-react-countries'
+import axios from 'axios'
+import { useEffect, useState } from 'react'
 
-import { AppRoutePath } from '@/app/appRoutePath'
+import { AppRoutePath, DOMAIN } from '@/app/appRoutePath'
 import { Button } from '@/atoms/Button/Button'
-import { InputSelect } from '@/atoms/InputSelect/InputSelect'
 import { InputText } from '@/atoms/InputText/InputText'
-import { country } from '@/types/CountryType'
 
 export const LoginPage = () => {
+  const [userInformation, setUserInformation] = useState({
+    email: '',
+    password: ''
+  })
+
+  const handleFormInputChange = (event: any) => {
+    setUserInformation({
+      ...userInformation,
+      [event.target.name]: event.target.value
+    })
+  }
+
+  const [isLoginDisabled, setIsLoginDisabled] = useState(true)
+
+  useEffect(() => {
+    const isEmailFilled = userInformation.email.length > 0
+    const isPasswordFilled = userInformation.password.length > 0
+
+    setIsLoginDisabled(isEmailFilled && isPasswordFilled)
+  }, [userInformation, isLoginDisabled])
+
+  const handleLoginClick = () => {
+    axios
+      .post(`${DOMAIN}/api/login`, {
+        email: userInformation.email,
+        password: userInformation.password
+      })
+      .then(async function (response) {
+        console.log(response)
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
+  }
+
   return (
     <div className="h-full min-h-[100vh] w-full max-w-[100vw]">
       {/* Field Input Section */}
@@ -34,6 +65,8 @@ export const LoginPage = () => {
               label="Email"
               placeholder="Enter your email"
               className="w-full"
+              value={userInformation.email}
+              onChange={handleFormInputChange}
             />
             <InputText
               type="password"
@@ -41,9 +74,15 @@ export const LoginPage = () => {
               label="Password"
               placeholder="Enter your password"
               className="w-full"
+              value={userInformation.password}
+              onChange={handleFormInputChange}
             />
             <div className="mt-8 flex items-center justify-end">
-              <Button type="primary" submit>
+              <Button
+                type="primary"
+                onClick={handleLoginClick}
+                disabled={!isLoginDisabled}
+              >
                 Log in
               </Button>
             </div>
