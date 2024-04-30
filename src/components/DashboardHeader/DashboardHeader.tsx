@@ -138,7 +138,7 @@ export const DashboardHeader = () => {
         ))}
       </div>
       {/* User Dropdown */}
-      <Menu>
+      <Menu offset={16}>
         <MenuHandler>
           <div className="flex items-center gap-6">
             <div className="flex flex-col gap-1">
@@ -152,8 +152,22 @@ export const DashboardHeader = () => {
             <IconChevron size={16} className="text-[#fff]" />
           </div>
         </MenuHandler>
-        <MenuList>
-          <MenuItem>Some Item</MenuItem>
+        <MenuList className="p-1">
+          <MenuItem>
+            <button className="flex items-center gap-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 -960 960 960"
+              >
+                <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z" />
+              </svg>
+              <Typography className="text-sm font-semibold leading-4 text-[#000]">
+                Logout
+              </Typography>
+            </button>
+          </MenuItem>
         </MenuList>
       </Menu>
     </header>

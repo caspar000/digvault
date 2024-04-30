@@ -1,5 +1,6 @@
 import { Typography } from '@material-tailwind/react'
 
+import { AppRoutePath } from '@/app/appRoutePath'
 import { DashboardCard } from '@/atoms/DashboardCard/DashboardCard'
 import { DashboardHeader } from '@/components/DashboardHeader/DashboardHeader'
 
@@ -345,13 +346,22 @@ export const DashboardPage = () => {
         </DashboardCard>
       </section>
       <footer className="mt-auto flex items-center justify-center gap-6 py-8">
-        <a href="#" className="text-xs leading-[20px] text-[#8d91a1]">
+        <a
+          href={AppRoutePath.LEGAL()}
+          className="text-xs leading-[20px] text-[#8d91a1]"
+        >
           Legal
         </a>
-        <a href="#" className="text-xs leading-[20px] text-[#8d91a1]">
+        <a
+          href={AppRoutePath.PRIVACY()}
+          className="text-xs leading-[20px] text-[#8d91a1]"
+        >
           Privacy
         </a>
-        <a href="#" className="text-xs leading-[20px] text-[#8d91a1]">
+        <a
+          href={AppRoutePath.TERMS()}
+          className="text-xs leading-[20px] text-[#8d91a1]"
+        >
           Terms & Conditions
         </a>
       </footer>
