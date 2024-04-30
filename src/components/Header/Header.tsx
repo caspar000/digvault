@@ -14,6 +14,10 @@ export const Header = ({ className }: IHeader) => {
   const navigate = useNavigate()
   const location = useLocation()
 
+  const handleOnLoginClick = () => {
+    navigate(AppRoutePath.LOGIN())
+  }
+
   const handleOnSignUpClick = () => {
     navigate(AppRoutePath.SIGNUP())
   }
@@ -59,7 +63,9 @@ export const Header = ({ className }: IHeader) => {
         </a>
       </div>
       <div className="flex items-center gap-2">
-        <Button type="secondary">Log In</Button>
+        <Button type="secondary" onClick={handleOnLoginClick}>
+          Log In
+        </Button>
         <Button type="primary" onClick={handleOnSignUpClick}>
           Sign Up
         </Button>

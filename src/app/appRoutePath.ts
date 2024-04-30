@@ -3,5 +3,6 @@ export const DOMAIN = import.meta.env.VITE_DOMAIN
 export const AppRoutePath = {
   HOME: () => '/',
   CLOUD: () => '/cloud',
-  SIGNUP: () => '/signup'
+  SIGNUP: () => '/signup',
+  LOGIN: () => '/login'
 }
