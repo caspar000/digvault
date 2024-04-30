@@ -16,6 +16,7 @@ interface IInputSelect {
   placeholder?: string
   options: IOptionsArray[]
   onChange?: () => void
+  onClick: (value: string) => void
   className?: string
 }
 
@@ -25,6 +26,7 @@ export const InputSelect = ({
   placeholder,
   options,
   onChange,
+  onClick,
   className
 }: IInputSelect) => {
   const [open, setOpen] = useState(false)
@@ -59,7 +61,7 @@ export const InputSelect = ({
       >
         {options &&
           options.map(({ icon, name, value }, index) => (
-            <Option key={index} value={value}>
+            <Option key={index} value={value} onClick={() => onClick(name)}>
               <div className="flex items-center gap-2">
                 {icon && (
                   <div className="flex h-4 w-4 shrink-0 items-center justify-center">

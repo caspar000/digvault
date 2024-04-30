@@ -32,7 +32,7 @@ export const HomePageSectionInfo = () => {
               <div className="my-[40px] flex flex-col gap-4">
                 {features.map(({ name }, index) => (
                   <div key={index} className="flex items-center gap-2">
-                    <IconCheckFill className="text-[#01A76A]" />
+                    <IconCheckFill className="shrink-0 text-[#01A76A]" />
                     <Typography className="text-sm font-semibold leading-6 text-[#7f8992]">
                       {name}
                     </Typography>

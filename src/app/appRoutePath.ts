@@ -4,5 +4,6 @@ export const AppRoutePath = {
   HOME: () => '/',
   CLOUD: () => '/cloud',
   SIGNUP: () => '/signup',
-  LOGIN: () => '/login'
+  LOGIN: () => '/login',
+  DASHBOARD: () => '/dashboard'
 }

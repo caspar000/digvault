@@ -5,8 +5,9 @@ interface IInputText {
   name?: string
   type?: string
   label?: string
+  value?: string
   placeholder?: string
-  onChange?: () => void
+  onChange?: (event: any) => void
   className?: string
 }
 
@@ -14,6 +15,7 @@ export const InputText = ({
   name,
   type = 'text',
   label,
+  value,
   placeholder,
   onChange,
   className
@@ -33,6 +35,7 @@ export const InputText = ({
       <input
         name={name}
         type={type}
+        value={value}
         placeholder={placeholder}
         className="w-full bg-[#F7F7F9] text-sm font-medium leading-[20px] text-[#0A0B0D] outline-0 placeholder:text-[#7F8992]"
         onChange={onChange}

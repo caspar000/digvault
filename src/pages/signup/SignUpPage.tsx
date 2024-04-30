@@ -1,10 +1,11 @@
 import { Typography } from '@material-tailwind/react'
-import { useState } from 'react'
+import axios from 'axios'
+import { useEffect, useState } from 'react'
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import { useCountries } from 'use-react-countries'
 
-import { AppRoutePath } from '@/app/appRoutePath'
+import { AppRoutePath, DOMAIN } from '@/app/appRoutePath'
 import { Button } from '@/atoms/Button/Button'
 import { InputSelect } from '@/atoms/InputSelect/InputSelect'
 import { InputText } from '@/atoms/InputText/InputText'
@@ -26,6 +27,78 @@ export const SignUpPage = () => {
 
   const [signUpStep, setSignUpStep] = useState('personal_information')
   // const [signUpStep, setSignUpStep] = useState('security_and_password')
+
+  const [userInformation, setUserInformation] = useState({
+    first_name: '',
+    last_name: '',
+    email: '',
+    countryCode: '',
+    phone: '',
+    password: '',
+    password_repeat: ''
+  })
+
+  const [nextStepDisabled, setNextStepDisabled] = useState(true)
+  const [isSignUpDisabled, setIsSignUpDisabled] = useState(true)
+
+  const handleFormInputChange = (event: any) => {
+    setUserInformation({
+      ...userInformation,
+      [event.target.name]: event.target.value
+    })
+  }
+
+  useEffect(() => {
+    const isFirstNameFilled = userInformation.first_name.length > 0
+    const isLastNameFilled = userInformation.last_name.length > 0
+    const isEmailFilled = userInformation.email.length > 0
+    const isCountrySelected = userInformation.countryCode.length > 0
+    const isPhoneFilled = userInformation.phone.length > 0
+
+    setNextStepDisabled(
+      isFirstNameFilled &&
+        isLastNameFilled &&
+        isEmailFilled &&
+        isCountrySelected &&
+        isPhoneFilled
+    )
+  }, [userInformation, nextStepDisabled])
+
+  useEffect(() => {
+    const isPasswordFilled = userInformation.password.length > 0
+    const isRepeatPasswordFilled = userInformation.password_repeat.length > 0
+
+    setIsSignUpDisabled(isPasswordFilled && isRepeatPasswordFilled)
+  }, [userInformation, isSignUpDisabled])
+
+  const handleContinueClick = () => {
+    if (signUpStep === 'personal_information') {
+      console.log('Next step')
+      setSignUpStep('security_and_password')
+    }
+  }
+
+  const handleCountryCodeClick = (value: string) => {
+    setUserInformation({
+      ...userInformation,
+      countryCode: value
+    })
+  }
+
+  const handleSignUpClick = () => {
+    axios
+      .post(`${DOMAIN}/api/register`, {
+        email: userInformation.email,
+        password: userInformation.password,
+        password_confirmation: userInformation.password_repeat
+      })
+      .then(async function (response) {
+        console.log(response)
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
+  }
 
   return (
     <div className="h-full min-h-[100vh] w-full max-w-[100vw]">
@@ -51,12 +124,16 @@ export const SignUpPage = () => {
                   label="First name"
                   placeholder="Enter your name"
                   className="w-full"
+                  value={userInformation.first_name}
+                  onChange={handleFormInputChange}
                 />
                 <InputText
                   name="last_name"
                   label="Last name"
                   placeholder="Enter your last name"
                   className="w-full"
+                  value={userInformation.last_name}
+                  onChange={handleFormInputChange}
                 />
               </div>
               <InputText
@@ -64,6 +141,8 @@ export const SignUpPage = () => {
                 label="Email"
                 placeholder="Enter your email"
                 className="w-full"
+                value={userInformation.email}
+                onChange={handleFormInputChange}
               />
               <div className="flex items-center gap-4">
                 <InputSelect
@@ -71,19 +150,24 @@ export const SignUpPage = () => {
                   label="Country"
                   options={countryOptions}
                   className="border-[#EBEBF0]"
+                  onClick={handleCountryCodeClick}
                 />
                 <InputText
                   name="phone"
                   label="Phone"
                   placeholder="000 000 000"
                   className="w-full"
+                  value={userInformation.phone}
+                  onChange={handleFormInputChange}
                 />
               </div>
               <div className="mt-8 flex items-center justify-between">
-                <Button type="secondary" submit>
-                  Cancel
-                </Button>
-                <Button type="primary" submit>
+                <Button type="secondary">Cancel</Button>
+                <Button
+                  type="primary"
+                  onClick={handleContinueClick}
+                  disabled={!nextStepDisabled}
+                >
                   Continue
                 </Button>
               </div>
@@ -107,6 +191,8 @@ export const SignUpPage = () => {
                 label="Password"
                 placeholder="Enter your password"
                 className="w-full"
+                value={userInformation.password}
+                onChange={handleFormInputChange}
               />
               <InputText
                 type="password"
@@ -114,12 +200,18 @@ export const SignUpPage = () => {
                 label="Repeat Password"
                 placeholder="Enter your password"
                 className="w-full"
+                value={userInformation.password_repeat}
+                onChange={handleFormInputChange}
               />
               <div className="mt-8 flex items-center justify-between">
                 <Button type="secondary" submit>
                   Cancel
                 </Button>
-                <Button type="primary" submit>
+                <Button
+                  type="primary"
+                  onClick={handleSignUpClick}
+                  disabled={!isSignUpDisabled}
+                >
                   Continue
                 </Button>
               </div>
