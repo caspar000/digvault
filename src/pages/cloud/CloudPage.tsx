@@ -16,7 +16,7 @@ export const CloudPage = () => {
     <>
       <Header />
       <Container className="py-[80px]">
-        <Typography className="mx-auto max-w-[640px] text-center text-[56px] font-semibold leading-[72px] text-[#000]">
+        <Typography className="mx-auto max-w-[640px] text-center text-[56px] font-semibold leading-[72px] text-[#000] max-sm:text-[38px] max-sm:leading-[56px]">
           Most affordable way to start earning BTC
         </Typography>
         <Typography className="mx-auto mt-1 max-w-[640px] text-center text-[16px] font-normal leading-6 text-[#000]">
@@ -27,7 +27,7 @@ export const CloudPage = () => {
         src="/cloud-page__banner.png"
         className="mx-auto h-full max-h-[660px] w-full max-w-[800px]"
       />
-      <Container className="grid grid-cols-3 gap-8 py-[80px]">
+      <Container className="grid grid-cols-3 gap-8 py-[80px] max-sm:grid-cols-1">
         <div className="flex flex-col gap-4">
           <Typography className="text-center text-[32px] font-bold leading-8 text-[#0667ea]">
             24 Hours
@@ -57,7 +57,7 @@ export const CloudPage = () => {
       {/* Choose ASIC Section */}
       <section className="bg-[#F4F8FE] py-[80px]">
         <Container>
-          <Typography className="text-center text-[56px] font-semibold leading-[72px] text-[#000]">
+          <Typography className="text-center text-[56px] font-semibold leading-[72px] text-[#000] max-sm:text-[38px] max-sm:leading-[56px]">
             Choose ASIC-based Mining Plans
           </Typography>
           <Typography className="mx-auto mt-1 max-w-[640px] text-center text-[16px] font-normal leading-6 text-[#000]">
@@ -65,7 +65,7 @@ export const CloudPage = () => {
             efficiency to the fullest. Simply select a plan and generate a
             contract with just a few clicks.
           </Typography>
-          <div className="mt-[80px] grid grid-cols-3 gap-[20px]">
+          <div className="mt-[80px] grid grid-cols-3 gap-[20px] max-sm:grid-cols-1">
             {/* Card 01 */}
             <div className="rounded-[16px] bg-[#fff] p-4">
               <Typography className="ml-2 text-xs font-semibold leading-4 text-[#0667ea]">
@@ -359,7 +359,7 @@ export const CloudPage = () => {
       </section>
       {/* Info Cards Section */}
       <Container className="pb-[64px] pt-[80px]">
-        <Typography className="text-center text-[56px] font-semibold leading-[72px] text-[#000]">
+        <Typography className="text-center text-[56px] font-semibold leading-[72px] text-[#000] max-sm:text-[38px] max-sm:leading-[56px]">
           How do I get started?
         </Typography>
         <Typography className="mx-auto mt-1 max-w-[640px] text-center text-[16px] font-normal leading-6 text-[#000]">
@@ -367,7 +367,7 @@ export const CloudPage = () => {
           cryptocurrencies is even easier with ECOS!
         </Typography>
       </Container>
-      <Container className="grid grid-cols-2 gap-[80px] py-[80px]">
+      <Container className="grid grid-cols-2 gap-[80px] py-[80px] max-sm:grid-cols-1">
         <div className="order-1 my-auto">
           <Typography className="text-[24px] font-semibold leading-[32px] text-[#000]">
             Sign up
@@ -406,8 +406,8 @@ export const CloudPage = () => {
         </div>
         <img src="/cloud-page__card01.png" className="order-2" />
       </Container>
-      <Container className="grid grid-cols-2 gap-[80px] py-[80px]">
-        <div className="order-2 my-auto">
+      <Container className="grid grid-cols-2 gap-[80px] py-[80px] max-sm:grid-cols-1">
+        <div className="order-2 my-auto max-sm:order-1">
           <Typography className="text-[24px] font-semibold leading-[32px] text-[#000]">
             Create and buy your contract
           </Typography>
@@ -444,12 +444,12 @@ export const CloudPage = () => {
             </button>
           </div>
         </div>
-        <img src="/cloud-page__card02.png" className="order-1" />
+        <img src="/cloud-page__card02.png" className="order-1 max-sm:order-2" />
       </Container>
       {/* FAQ List */}
       <section className="border-t border-[#DFE7F2] bg-[#F4F8FE] py-[80px]">
         <Container>
-          <Typography className="text-center text-[56px] font-semibold leading-[72px] text-[#000]">
+          <Typography className="text-center text-[56px] font-semibold leading-[72px] text-[#000] max-sm:text-[38px] max-sm:leading-[56px]">
             Got a question?
           </Typography>
           <Typography className="mx-auto mt-1 max-w-[640px] text-center text-[16px] font-normal leading-6 text-[#000]">

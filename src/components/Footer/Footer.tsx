@@ -9,7 +9,7 @@ export const Footer = () => {
           <div className="flex flex-col gap-2">
             <p className="font-medium leading-6 text-[#fff]">Products</p>
             <a
-              // href={AppRoutePath.TRADING()}
+              href={AppRoutePath.CLOUD()}
               className="text-xs leading-[20px] text-[#8D91A1]"
             >
               Cloud Mining
