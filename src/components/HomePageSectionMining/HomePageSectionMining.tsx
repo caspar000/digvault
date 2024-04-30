@@ -52,12 +52,12 @@ export const HomePageSectionMining = () => {
       <Typography className="mt-1 text-center text-[16px] font-normal leading-6 text-[#000]">
         Set the farm properties and estimate its efficiency!
       </Typography>
-      <section className="mt-[80px] grid grid-cols-2 gap-2">
+      <section className="mt-[80px] grid grid-cols-2 gap-2 max-sm:grid-cols-1">
         <div className="flex items-center justify-center rounded-[16px] border border-[#F3F3F3] p-4">
           <img src="/home-page__miner01.png" />
         </div>
         <div className="flex flex-col justify-between rounded-[16px] bg-[#F4F8FD] p-4">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 max-sm:flex-col">
             <CardDropdown
               label="Device"
               options={DeviceOptions}
@@ -69,11 +69,15 @@ export const HomePageSectionMining = () => {
               options={DeviceQuantity}
               selected={selectedQuantity}
               onClick={onQuantityMenuClick}
-              className="max-w-[120px]"
+              className="max-w-[120px] max-sm:max-w-full"
             />
           </div>
           {/* BTC Forecast */}
-          <CardDisplay label="BTC Forecast" value="90 0000" />
+          <CardDisplay
+            label="BTC Forecast"
+            value="90 0000"
+            className="max-sm:mt-4"
+          />
         </div>
         <article className="flex flex-col justify-between gap-2 rounded-[16px] bg-[#F4F8FD] p-4">
           {MiningCardMocks.map(({ icon, name, value }, index) => (

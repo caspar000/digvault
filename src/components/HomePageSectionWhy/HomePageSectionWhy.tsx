@@ -13,8 +13,11 @@ export const HomePageSectionWhy = () => {
           Our own power plant, armed guards, strong team, the best partners and
           government support form our unique infrastructure
         </Typography>
-        <div className="mt-[80px] flex gap-10 rounded-[16px] bg-[#fff] p-10 shadow-[0_1px_2px_0_rgba(112,128,148,0.10)]">
-          <img src="/home-page__flag01.png" />
+        <div className="mt-[80px] flex gap-10 rounded-[16px] bg-[#fff] p-10 shadow-[0_1px_2px_0_rgba(112,128,148,0.10)] max-sm:flex-col">
+          <img
+            src="/home-page__flag01.png"
+            className="max-sm:mx-auto max-sm:w-32"
+          />
           <div className="my-auto flex flex-col gap-4">
             <Typography className="text-[18px] leading-6 text-[#000]">
               DigVault data centre is located in the Free Economic Zone.
@@ -26,7 +29,7 @@ export const HomePageSectionWhy = () => {
             </Typography>
           </div>
         </div>
-        <div className="mt-[24px] grid grid-cols-2 gap-[24px]">
+        <div className="mt-[24px] grid grid-cols-2 gap-[24px] max-sm:grid-cols-1">
           <div className="flex flex-col gap-[24px] rounded-[16px] bg-[#fff] p-10 shadow-[0_1px_2px_0_rgba(112,128,148,0.10)]">
             <svg
               xmlns="http://www.w3.org/2000/svg"

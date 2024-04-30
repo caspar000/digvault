@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { Typography } from '@material-tailwind/react'
 import cn from 'classnames'
+import { isMobile } from 'react-device-detect'
 
 import { IconCheckFill } from '@/assets/Icons'
 import { Button } from '@/atoms/Button/Button'
@@ -13,8 +14,15 @@ export const HomePageSectionInfo = () => {
     <section className="my-[80px] flex flex-col gap-[160px]">
       {HomePageInfoSectionMock.map(
         ({ title, desc, features, banner }, index) => (
-          <Container key={index} className="grid grid-cols-2 gap-[80px]">
-            <div className={cn('my-auto', IsNumberOdd(index) && 'order-2')!}>
+          <Container
+            key={index}
+            className="grid grid-cols-2 gap-[80px] max-sm:grid-cols-1"
+          >
+            <div
+              className={
+                cn('my-auto', IsNumberOdd(index) && !isMobile && 'order-2')!
+              }
+            >
               <Typography className="text-[24px] font-semibold leading-[32px] text-[#000]">
                 {title}
               </Typography>
@@ -38,7 +46,10 @@ export const HomePageSectionInfo = () => {
                 </button>
               </div>
             </div>
-            <img src={banner} className={cn(IsNumberOdd(index) && 'order-1')} />
+            <img
+              src={banner}
+              className={cn(IsNumberOdd(index) && !isMobile && 'order-1')}
+            />
           </Container>
         )
       )}

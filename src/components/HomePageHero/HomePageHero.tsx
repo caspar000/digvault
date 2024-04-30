@@ -6,7 +6,7 @@ export const HomePageHero = () => {
   return (
     <section className="bg-[#0967E9]">
       <Container>
-        <div className="grid grid-cols-2 gap-[80px] py-[80px]">
+        <div className="grid grid-cols-2 gap-[80px] py-[80px] max-sm:grid-cols-1">
           <Typography className="text-[56px] font-semibold leading-[72px] text-[#fff]">
             Simplified Mining, Automated Earning.
           </Typography>

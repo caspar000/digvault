@@ -15,7 +15,7 @@ export const HomePageSectionPlans = () => {
           efficiency to the fullest. Simply select a plan and generate a
           contract with just a few clicks.
         </Typography>
-        <div className="mt-[80px] grid grid-cols-3 gap-[20px]">
+        <div className="mt-[80px] grid grid-cols-3 gap-[20px] max-sm:grid-cols-1">
           {MininPlanMocks.map(
             ({ label, title, name, price, service, rating }, index) => (
               <div key={index} className="rounded-[16px] bg-[#fff] p-4">
