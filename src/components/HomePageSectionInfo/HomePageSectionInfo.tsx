@@ -2,7 +2,9 @@
 import { Typography } from '@material-tailwind/react'
 import cn from 'classnames'
 import { isMobile } from 'react-device-detect'
+import { Link } from 'react-router-dom'
 
+import { AppRoutePath } from '@/app/appRoutePath'
 import { IconCheckFill } from '@/assets/Icons'
 import { Button } from '@/atoms/Button/Button'
 import { Container } from '@/atoms/Container/Container'
@@ -40,10 +42,14 @@ export const HomePageSectionInfo = () => {
                 ))}
               </div>
               <div className="flex items-center gap-4">
-                <Button type="primary">Try Now</Button>
-                <button className="rounded-[32px] bg-[#F3FAFF] px-4 py-2 text-sm font-semibold leading-6 text-[#0667EA] hover:bg-[#fafdff] active:bg-[#F3FAFF]">
-                  Learn more
-                </button>
+                <Link to={AppRoutePath.SIGNUP()}>
+                  <Button type="primary">Try Now</Button>
+                </Link>
+                <Link to={AppRoutePath.MINERS()}>
+                  <button className="rounded-[32px] bg-[#F3FAFF] px-4 py-2 text-sm font-semibold leading-6 text-[#0667EA] hover:bg-[#fafdff] active:bg-[#F3FAFF]">
+                    Learn more
+                  </button>
+                </Link>
               </div>
             </div>
             <img

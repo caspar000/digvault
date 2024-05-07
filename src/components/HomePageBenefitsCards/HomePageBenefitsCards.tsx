@@ -1,3 +1,6 @@
+import { Link } from 'react-router-dom'
+
+import { AppRoutePath } from '@/app/appRoutePath'
 import { Container } from '@/atoms/Container/Container'
 import { BenefitsAndCoreValuesMock } from '@/mocks/HomePageMocks'
 
@@ -28,9 +31,11 @@ export const HomePageBenefitsCards = () => {
           ))}
         </div>
         <div className="flex justify-center">
-          <button className="rounded-[32px] bg-[#3885EE] px-4 py-2 text-sm font-semibold leading-6 text-[#fff] hover:bg-[#5f9df1] active:bg-[#3277d6]">
-            Start Mining
-          </button>
+          <Link to={AppRoutePath.SIGNUP()}>
+            <button className="rounded-[32px] bg-[#3885EE] px-4 py-2 text-sm font-semibold leading-6 text-[#fff] hover:bg-[#5f9df1] active:bg-[#3277d6]">
+              Start Mining
+            </button>
+          </Link>
         </div>
       </Container>
     </section>

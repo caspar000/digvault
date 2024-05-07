@@ -1,4 +1,5 @@
 import { Typography } from '@material-tailwind/react'
+import { useEffect } from 'react'
 
 import { Container } from '@/atoms/Container/Container'
 import { Footer } from '@/components/Footer/Footer'
@@ -8,6 +9,9 @@ import { HomePageSectionMining } from '@/components/HomePageSectionMining/HomePa
 import { HomePageSectionWhy } from '@/components/HomePageSectionWhy/HomePageSectionWhy'
 
 export const MinersPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  })
   return (
     <>
       <Header />

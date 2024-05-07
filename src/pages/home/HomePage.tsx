@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+
 import { Footer } from '@/components/Footer/Footer'
 import { Header } from '@/components/Header/Header'
 import { HomePageBenefitsCards } from '@/components/HomePageBenefitsCards/HomePageBenefitsCards'
@@ -10,6 +12,10 @@ import { HomePageSectionPlans } from '@/components/HomePageSectionPlans/HomePage
 import { HomePageSectionWhy } from '@/components/HomePageSectionWhy/HomePageSectionWhy'
 
 export const HomePage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  })
+
   return (
     <>
       {/* HEADER */}

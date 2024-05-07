@@ -1,5 +1,7 @@
 import { Typography } from '@material-tailwind/react'
+import { Link } from 'react-router-dom'
 
+import { AppRoutePath } from '@/app/appRoutePath'
 import { Container } from '@/atoms/Container/Container'
 
 export const HomePageHero = () => {
@@ -17,12 +19,16 @@ export const HomePageHero = () => {
               cryptocurrency assets. Start earning already today,
             </Typography>
             <div className="mt-8 flex items-center gap-2">
-              <button className="rounded-[32px] bg-[#FFD915] px-4 py-2 text-sm font-semibold leading-6 text-[#1a212a] hover:bg-[#ffe044] active:bg-[#e5c313]">
-                Start Now
-              </button>
-              <button className="rounded-[32px] bg-[#3885EE] px-4 py-2 text-sm font-semibold leading-6 text-[#fff] hover:bg-[#5f9df1] active:bg-[#3277d6]">
-                How it Works?
-              </button>
+              <Link to={AppRoutePath.SIGNUP()}>
+                <button className="rounded-[32px] bg-[#FFD915] px-4 py-2 text-sm font-semibold leading-6 text-[#1a212a] hover:bg-[#ffe044] active:bg-[#e5c313]">
+                  Start Now
+                </button>
+              </Link>
+              <Link to={AppRoutePath.CLOUD()}>
+                <button className="rounded-[32px] bg-[#3885EE] px-4 py-2 text-sm font-semibold leading-6 text-[#fff] hover:bg-[#5f9df1] active:bg-[#3277d6]">
+                  How it Works?
+                </button>
+              </Link>
             </div>
           </div>
         </div>

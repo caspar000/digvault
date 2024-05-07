@@ -68,12 +68,12 @@ export const HomePageSectionPlans = () => {
             )
           )}
         </div>
-        <div className="mt-8 flex w-full items-center justify-center gap-2">
+        {/* <div className="mt-8 flex w-full items-center justify-center gap-2">
           <div className="h-2 w-2 rounded-full bg-[#0667EA]" />
           <div className="h-2 w-2 rounded-full bg-[#CCD0D5]" />
           <div className="h-2 w-2 rounded-full bg-[#CCD0D5]" />
           <div className="h-2 w-2 rounded-full bg-[#CCD0D5]" />
-        </div>
+        </div> */}
       </Container>
     </section>
   )

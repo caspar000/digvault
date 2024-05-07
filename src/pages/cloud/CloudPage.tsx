@@ -1,5 +1,8 @@
 import { Typography } from '@material-tailwind/react'
+import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
+import { AppRoutePath } from '@/app/appRoutePath'
 import { IconCheckFill } from '@/assets/Icons'
 import { Button } from '@/atoms/Button/Button'
 import { Container } from '@/atoms/Container/Container'
@@ -12,6 +15,9 @@ import { Header } from '@/components/Header/Header'
 // TODO: Create CloudPageMocks
 
 export const CloudPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  })
   return (
     <>
       <Header />
@@ -398,10 +404,14 @@ export const CloudPage = () => {
             </div>
           </div>
           <div className="flex items-center gap-4">
-            <Button type="primary">Try Now</Button>
-            <button className="rounded-[32px] bg-[#F3FAFF] px-4 py-2 text-sm font-semibold leading-6 text-[#0667EA] hover:bg-[#fafdff] active:bg-[#F3FAFF]">
-              Learn more
-            </button>
+            <Link to={AppRoutePath.SIGNUP()}>
+              <Button type="primary">Try Now</Button>
+            </Link>
+            <Link to={AppRoutePath.MINERS()}>
+              <button className="rounded-[32px] bg-[#F3FAFF] px-4 py-2 text-sm font-semibold leading-6 text-[#0667EA] hover:bg-[#fafdff] active:bg-[#F3FAFF]">
+                Learn more
+              </button>
+            </Link>
           </div>
         </div>
         <img src="/cloud-page__card01.png" className="order-2" />
@@ -438,10 +448,14 @@ export const CloudPage = () => {
             </div>
           </div>
           <div className="flex items-center gap-4">
-            <Button type="primary">Try Now</Button>
-            <button className="rounded-[32px] bg-[#F3FAFF] px-4 py-2 text-sm font-semibold leading-6 text-[#0667EA] hover:bg-[#fafdff] active:bg-[#F3FAFF]">
-              Learn more
-            </button>
+            <Link to={AppRoutePath.SIGNUP()}>
+              <Button type="primary">Try Now</Button>
+            </Link>
+            <Link to={AppRoutePath.MINERS()}>
+              <button className="rounded-[32px] bg-[#F3FAFF] px-4 py-2 text-sm font-semibold leading-6 text-[#0667EA] hover:bg-[#fafdff] active:bg-[#F3FAFF]">
+                Learn more
+              </button>
+            </Link>
           </div>
         </div>
         <img src="/cloud-page__card02.png" className="order-1 max-sm:order-2" />
