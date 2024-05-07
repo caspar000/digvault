@@ -1,5 +1,6 @@
 import { Typography } from '@material-tailwind/react'
 import axios from 'axios'
+import Cookies from 'js-cookie'
 import { useEffect, useState } from 'react'
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
@@ -94,6 +95,11 @@ export const SignUpPage = () => {
       })
       .then(async function (response) {
         console.log(response)
+
+        // set access token
+        Cookies.set('token', response.data.data.token)
+
+        // TODO: set user data in redux
       })
       .catch(function (error) {
         console.log(error)
