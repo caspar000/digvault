@@ -44,14 +44,12 @@ export const Header = ({ className }: IHeader) => {
           Cloud Mining
         </a>
         <a
-          href="#"
-          className="rounded-[40px] px-4 py-2 text-sm font-semibold leading-6 text-[#909499]"
-        >
-          Miner Rental
-        </a>
-        <a
-          href="#"
-          className="rounded-[40px] px-4 py-2 text-sm font-semibold leading-6 text-[#909499]"
+          href={AppRoutePath.MINERS()}
+          className={cn(
+            'rounded-[40px] px-4 py-2 text-sm font-semibold leading-6 text-[#909499]',
+            location.pathname === AppRoutePath.MINERS() &&
+              'rounded-[40px] bg-[#F4F8FD] !text-[#000]'
+          )}
         >
           Bitcoin Miners
         </a>
@@ -59,7 +57,7 @@ export const Header = ({ className }: IHeader) => {
           href="#"
           className="flex items-center gap-1 text-sm font-semibold leading-6 text-[#909499]"
         >
-          Company <IconChevron size={16} />
+          About Us
         </a>
       </div>
       <div className="flex items-center gap-2">
