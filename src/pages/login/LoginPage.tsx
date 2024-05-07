@@ -1,12 +1,20 @@
 import { Typography } from '@material-tailwind/react'
 import axios from 'axios'
+import Cookies from 'js-cookie'
 import { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 import { AppRoutePath, DOMAIN } from '@/app/appRoutePath'
 import { Button } from '@/atoms/Button/Button'
 import { InputText } from '@/atoms/InputText/InputText'
+import { setUser } from '@/store/features/userSlice/userSlice'
 
 export const LoginPage = () => {
+  const dispatch = useDispatch()
+
+  const navigate = useNavigate()
+
   const [userInformation, setUserInformation] = useState({
     email: '',
     password: ''
@@ -29,6 +37,7 @@ export const LoginPage = () => {
   }, [userInformation, isLoginDisabled])
 
   const handleLoginClick = () => {
+    console.log('login pushed', userInformation)
     axios
       .post(`${DOMAIN}/api/login`, {
         email: userInformation.email,
@@ -36,6 +45,14 @@ export const LoginPage = () => {
       })
       .then(async function (response) {
         console.log(response)
+        // set access token
+        Cookies.set('token', response.data.data.token)
+
+        // TODO: set user data in redux
+        dispatch(setUser(response.data.data))
+
+        // navigate to dashboard
+        navigate(AppRoutePath.DASHBOARD())
       })
       .catch(function (error) {
         console.log(error)

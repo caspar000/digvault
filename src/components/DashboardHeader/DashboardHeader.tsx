@@ -6,10 +6,13 @@ import {
   Typography
 } from '@material-tailwind/react'
 import cn from 'classnames'
-import { useLocation } from 'react-router-dom'
+import Cookies from 'js-cookie'
+import { useSelector } from 'react-redux'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 import { AppRoutePath } from '@/app/appRoutePath'
 import { IconChevron } from '@/assets/Icons'
+import { RootState } from '@/store'
 
 const DashboardHeaderLinkMocks = [
   {
@@ -121,6 +124,19 @@ const DashboardHeaderLinkMocks = [
 ]
 
 export const DashboardHeader = () => {
+  const userEmail = useSelector((state: RootState) => state.user.email)
+
+  const navigate = useNavigate()
+
+  const handleLogoutClick = () => {
+    // remove access token
+    Cookies.remove('token')
+
+    // TODO: purge redux store
+
+    // navigate to home
+    navigate(AppRoutePath.HOME())
+  }
   return (
     <header className="flex items-center justify-between bg-[#0667EA] px-6 py-3">
       <a href={AppRoutePath.DASHBOARD()}>
@@ -143,30 +159,32 @@ export const DashboardHeader = () => {
           <div className="flex items-center gap-6">
             <div className="flex flex-col gap-1">
               <Typography className="text-sm font-semibold leading-4 text-[#fff]">
-                David
+                Name
+                {/* David */}
               </Typography>
               <Typography className="text-xs leading-4 text-[#fff]">
-                Davidjakobs@gmail.com
+                {userEmail}
               </Typography>
             </div>
             <IconChevron size={16} className="text-[#fff]" />
           </div>
         </MenuHandler>
         <MenuList className="p-1">
-          <MenuItem>
-            <button className="flex items-center gap-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 -960 960 960"
-              >
-                <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z" />
-              </svg>
-              <Typography className="text-sm font-semibold leading-4 text-[#000]">
-                Logout
-              </Typography>
-            </button>
+          <MenuItem
+            className="flex items-center gap-2"
+            onClick={handleLogoutClick}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 -960 960 960"
+            >
+              <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z" />
+            </svg>
+            <Typography className="text-sm font-semibold leading-4 text-[#000]">
+              Logout
+            </Typography>
           </MenuItem>
         </MenuList>
       </Menu>

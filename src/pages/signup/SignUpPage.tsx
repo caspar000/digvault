@@ -2,6 +2,8 @@ import { Typography } from '@material-tailwind/react'
 import axios from 'axios'
 import Cookies from 'js-cookie'
 import { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import { useCountries } from 'use-react-countries'
@@ -10,6 +12,7 @@ import { AppRoutePath, DOMAIN } from '@/app/appRoutePath'
 import { Button } from '@/atoms/Button/Button'
 import { InputSelect } from '@/atoms/InputSelect/InputSelect'
 import { InputText } from '@/atoms/InputText/InputText'
+import { setUser } from '@/store/features/userSlice/userSlice'
 import { country } from '@/types/CountryType'
 
 export const SignUpPage = () => {
@@ -86,6 +89,10 @@ export const SignUpPage = () => {
     })
   }
 
+  const dispatch = useDispatch()
+
+  const navigate = useNavigate()
+
   const handleSignUpClick = () => {
     axios
       .post(`${DOMAIN}/api/register`, {
@@ -100,6 +107,10 @@ export const SignUpPage = () => {
         Cookies.set('token', response.data.data.token)
 
         // TODO: set user data in redux
+        dispatch(setUser(response.data.data))
+
+        // navigate to dashboard
+        navigate(AppRoutePath.DASHBOARD())
       })
       .catch(function (error) {
         console.log(error)
