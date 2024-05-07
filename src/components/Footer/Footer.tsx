@@ -6,71 +6,58 @@ export const Footer = () => {
     <footer className="border-t border-[#2D2F39] bg-[#1B1C22] py-16 max-sm:px-6">
       <Container className="border-b border-[#2D2F39] pb-[48px]">
         <div className="flex justify-between gap-[32px] max-sm:flex-wrap">
-          <div className="flex flex-col gap-2">
-            <p className="font-medium leading-6 text-[#fff]">Products</p>
-            <a
-              href={AppRoutePath.CLOUD()}
-              className="text-xs leading-[20px] text-[#8D91A1]"
-            >
-              Cloud Mining
-            </a>
-            <a
-              href={AppRoutePath.MINERS()}
-              className="text-xs leading-[20px] text-[#8D91A1]"
-            >
-              Bitcoin Mining
-            </a>
-          </div>
-          <div className="flex flex-col gap-2">
-            <p className="font-medium leading-6 text-[#fff]">Resources</p>
-            <a href="#" className="text-xs leading-[20px] text-[#8D91A1]">
-              Reviews
-            </a>
-            <a href="#" className="text-xs leading-[20px] text-[#8D91A1]">
-              FAQ
-            </a>
-            <a href="#" className="text-xs leading-[20px] text-[#8D91A1]">
-              Contacts
-            </a>
-            <a href="#" className="text-xs leading-[20px] text-[#8D91A1]">
-              Sitemap
-            </a>
-          </div>
-          <div className="flex flex-col gap-2">
-            <p className="font-medium leading-6 text-[#fff]">Company</p>
-            <a
-              href={AppRoutePath.ABOUT()}
-              className="text-xs leading-[20px] text-[#8D91A1]"
-            >
-              About us
-            </a>
-            <a href="#" className="text-xs leading-[20px] text-[#8D91A1]">
-              Security
-            </a>
-            <a href="#" className="text-xs leading-[20px] text-[#8D91A1]">
-              Licenses
-            </a>
-          </div>
-          <div className="flex flex-col gap-2">
-            <p className="font-medium leading-6 text-[#fff]">Legal</p>
-            <a
-              href={AppRoutePath.LEGAL()}
-              className="text-xs leading-[20px] text-[#8D91A1]"
-            >
-              Legals
-            </a>
-            <a
-              href={AppRoutePath.PRIVACY()}
-              className="text-xs leading-[20px] text-[#8D91A1]"
-            >
-              Privacy
-            </a>
-            <a
-              href={AppRoutePath.TERMS()}
-              className="text-xs leading-[20px] text-[#8D91A1]"
-            >
-              Terms & Conditions
-            </a>
+          <div className="flex justify-between gap-[32px] max-sm:flex-wrap">
+            <div className="flex w-[220px] flex-col gap-2">
+              <p className="font-medium leading-6 text-[#fff]">Products</p>
+              <a
+                href={AppRoutePath.CLOUD()}
+                className="text-xs leading-[20px] text-[#8D91A1]"
+              >
+                Cloud Mining
+              </a>
+              <a
+                href={AppRoutePath.MINERS()}
+                className="text-xs leading-[20px] text-[#8D91A1]"
+              >
+                Bitcoin Mining
+              </a>
+            </div>
+            <div className="flex w-[220px] flex-col gap-2">
+              <p className="font-medium leading-6 text-[#fff]">Company</p>
+              <a
+                href={AppRoutePath.ABOUT()}
+                className="text-xs leading-[20px] text-[#8D91A1]"
+              >
+                About us
+              </a>
+              <a href="#" className="text-xs leading-[20px] text-[#8D91A1]">
+                Security
+              </a>
+              <a href="#" className="text-xs leading-[20px] text-[#8D91A1]">
+                Licenses
+              </a>
+            </div>
+            <div className="flex w-[220px] flex-col gap-2">
+              <p className="font-medium leading-6 text-[#fff]">Legal</p>
+              <a
+                href={AppRoutePath.LEGAL()}
+                className="text-xs leading-[20px] text-[#8D91A1]"
+              >
+                Legals
+              </a>
+              <a
+                href={AppRoutePath.PRIVACY()}
+                className="text-xs leading-[20px] text-[#8D91A1]"
+              >
+                Privacy
+              </a>
+              <a
+                href={AppRoutePath.TERMS()}
+                className="text-xs leading-[20px] text-[#8D91A1]"
+              >
+                Terms & Conditions
+              </a>
+            </div>
           </div>
           {/* TODO: Language Switcher */}
           <a href="#" className="text-xs leading-[20px] text-[#8D91A1]">

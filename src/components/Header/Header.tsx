@@ -1,8 +1,7 @@
 import cn from 'classnames'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 import { AppRoutePath } from '@/app/appRoutePath'
-import { IconChevron } from '@/assets/Icons'
 import { Button } from '@/atoms/Button/Button'
 
 interface IHeader {
@@ -29,12 +28,12 @@ export const Header = ({ className }: IHeader) => {
         className
       )}
     >
-      <a href="/">
+      <Link to="/">
         <img src="/main_logo.svg" alt="DigVault" />
-      </a>
+      </Link>
       <div className="flex items-center gap-4 max-sm:hidden">
-        <a
-          href={AppRoutePath.CLOUD()}
+        <Link
+          to={AppRoutePath.CLOUD()}
           className={cn(
             'rounded-[40px] px-4 py-2 text-sm font-semibold leading-6 text-[#909499]',
             location.pathname === AppRoutePath.CLOUD() &&
@@ -42,9 +41,9 @@ export const Header = ({ className }: IHeader) => {
           )}
         >
           Cloud Mining
-        </a>
-        <a
-          href={AppRoutePath.MINERS()}
+        </Link>
+        <Link
+          to={AppRoutePath.MINERS()}
           className={cn(
             'rounded-[40px] px-4 py-2 text-sm font-semibold leading-6 text-[#909499]',
             location.pathname === AppRoutePath.MINERS() &&
@@ -52,9 +51,9 @@ export const Header = ({ className }: IHeader) => {
           )}
         >
           Bitcoin Miners
-        </a>
-        <a
-          href={AppRoutePath.ABOUT()}
+        </Link>
+        <Link
+          to={AppRoutePath.ABOUT()}
           className={cn(
             'rounded-[40px] px-4 py-2 text-sm font-semibold leading-6 text-[#909499]',
             location.pathname === AppRoutePath.ABOUT() &&
@@ -62,7 +61,7 @@ export const Header = ({ className }: IHeader) => {
           )}
         >
           About Us
-        </a>
+        </Link>
       </div>
       <div className="flex items-center gap-2">
         <Button type="secondary" onClick={handleOnLoginClick}>
