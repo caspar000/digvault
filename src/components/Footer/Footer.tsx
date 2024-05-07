@@ -15,13 +15,7 @@ export const Footer = () => {
               Cloud Mining
             </a>
             <a
-              // href={AppRoutePath.SCHOOL()}
-              className="text-xs leading-[20px] text-[#8D91A1]"
-            >
-              Mining Rental
-            </a>
-            <a
-              // href={AppRoutePath.CLOUD()}
+              href={AppRoutePath.MINERS()}
               className="text-xs leading-[20px] text-[#8D91A1]"
             >
               Bitcoin Mining
@@ -44,7 +38,10 @@ export const Footer = () => {
           </div>
           <div className="flex flex-col gap-2">
             <p className="font-medium leading-6 text-[#fff]">Company</p>
-            <a href="#" className="text-xs leading-[20px] text-[#8D91A1]">
+            <a
+              href={AppRoutePath.ABOUT()}
+              className="text-xs leading-[20px] text-[#8D91A1]"
+            >
               About us
             </a>
             <a href="#" className="text-xs leading-[20px] text-[#8D91A1]">

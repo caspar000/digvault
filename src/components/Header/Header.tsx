@@ -54,8 +54,12 @@ export const Header = ({ className }: IHeader) => {
           Bitcoin Miners
         </a>
         <a
-          href="#"
-          className="flex items-center gap-1 text-sm font-semibold leading-6 text-[#909499]"
+          href={AppRoutePath.ABOUT()}
+          className={cn(
+            'rounded-[40px] px-4 py-2 text-sm font-semibold leading-6 text-[#909499]',
+            location.pathname === AppRoutePath.ABOUT() &&
+              'rounded-[40px] bg-[#F4F8FD] !text-[#000]'
+          )}
         >
           About Us
         </a>

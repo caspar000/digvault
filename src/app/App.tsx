@@ -6,6 +6,7 @@ import {
   Routes
 } from 'react-router-dom'
 
+import { AboutPage } from '@/pages/about/AboutPage'
 import { CloudPage } from '@/pages/cloud/CloudPage'
 import { DashboardPage } from '@/pages/dashboard/DashboardPage'
 import { DashboardMiningPage } from '@/pages/dashboard/mining/DashboardMiningPage'
@@ -27,6 +28,7 @@ const App = () => {
           <Route path={AppRoutePath.HOME()} element={<HomePage />} />
           <Route path={AppRoutePath.CLOUD()} element={<CloudPage />} />
           <Route path={AppRoutePath.MINERS()} element={<MinersPage />} />
+          <Route path={AppRoutePath.ABOUT()} element={<AboutPage />} />
           <Route path={AppRoutePath.SIGNUP()} element={<SignUpPage />} />
           <Route path={AppRoutePath.LOGIN()} element={<LoginPage />} />
           <Route path={AppRoutePath.LEGAL()} element={<LegalPage />} />
