@@ -253,7 +253,7 @@ export const HomePageSectionMining = () => {
                     />
                   </svg>
                 }
-                name="Yearly Daily Reward"
+                name="Daily Mining Reward"
                 value={`${parseFloat(selectedDeviceObject?.daily_mining)} BTC`}
               />
               <CardItem
@@ -271,7 +271,7 @@ export const HomePageSectionMining = () => {
                     />
                   </svg>
                 }
-                name="Yearly Daily Reward"
+                name="Daily Mining Reward"
                 value={`${parseFloat(selectedDeviceObject?.daily_mining)} USD`}
               />
               {/* {MiningCardRewardMocks.map(({ icon, name, value }, index) => (
