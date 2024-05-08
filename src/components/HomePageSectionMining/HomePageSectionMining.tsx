@@ -5,12 +5,17 @@ import {
   MenuList,
   Typography
 } from '@material-tailwind/react'
+import axios from 'axios'
 import cn from 'classnames'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
 
+import { fetchDevicesDataFromAPI } from '@/api/slices/Devices.api'
+import { DOMAIN } from '@/app/appRoutePath'
 import { IconChevron } from '@/assets/Icons'
 import { Container } from '@/atoms/Container/Container'
 import { MiningCardMocks, MiningCardRewardMocks } from '@/mocks/HomePageMocks'
+import { AppDispatch } from '@/store'
 
 const DeviceOptions = [
   {
@@ -43,6 +48,26 @@ export const HomePageSectionMining = () => {
   const onQuantityMenuClick = (index: number) => {
     setSelectedQuantity(index)
   }
+
+  const dispatch = useDispatch<AppDispatch>()
+
+  dispatch(fetchDevicesDataFromAPI())
+
+  // const getDeviceListFromAPI = () => {
+  //   axios
+  //     .get(`${DOMAIN}/api/f`)
+  //     .then(async function (response) {
+  //       console.log(response)
+  //       // set access token
+  //     })
+  //     .catch(function (error) {
+  //       console.log(error)
+  //     })
+  // }
+
+  // useEffect(() => {
+  //   getDeviceListFromAPI()
+  // }, [])
 
   return (
     <Container className="py-[80px]">
