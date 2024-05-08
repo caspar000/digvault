@@ -284,7 +284,10 @@ export const HomePageSectionMining = () => {
                   Total Cost
                 </Typography>
                 <Typography className="text-[20px] font-semibold leading-6 text-[#000]">
-                  {`$${selectedDeviceObject?.price}`}
+                  {`$${
+                    parseFloat(selectedDeviceObject?.price) *
+                    (selectedQuantity + 1)
+                  }`}
                 </Typography>
               </div>
               <Link to={AppRoutePath.SIGNUP()}>
