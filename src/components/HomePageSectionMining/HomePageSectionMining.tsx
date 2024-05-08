@@ -95,7 +95,7 @@ export const HomePageSectionMining = () => {
           <section className="mt-[80px] grid grid-cols-2 gap-2 max-sm:grid-cols-1">
             <div className="flex items-center justify-center rounded-[16px] border border-[#F3F3F3] p-4">
               <img
-                src={selectedDeviceObject.image}
+                src="/home-page__miner01.png"
                 className="max-h-[174px] max-w-[231px]"
               />
             </div>
