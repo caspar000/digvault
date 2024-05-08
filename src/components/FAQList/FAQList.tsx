@@ -3,9 +3,11 @@ import {
   AccordionBody,
   AccordionHeader
 } from '@material-tailwind/react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 
 import { IconArrow } from '@/assets/Icons'
+import { RootState } from '@/store'
 
 const faqData = [
   {
@@ -51,28 +53,29 @@ export const FAQComponent = () => {
 
   const handleOpen = (value: number) => setOpen(open === value ? 0 : value)
 
-  // const faqData = useSelector((state: RootState) => state.faqs)
+  const faqData = useSelector((state: RootState) => state.faq)
 
   return (
     <div className="mx-auto mb-32 mt-16 flex w-full max-w-[960px] flex-col gap-6 max-sm:my-8">
-      {faqData.map(({ id, question, answer }) => (
-        <Accordion
-          key={id}
-          open={open === id}
-          icon={<IconArrow id={id} open={open} />}
-          className="px-4 outline-0"
-        >
-          <AccordionHeader
-            onClick={() => handleOpen(id)}
-            className="border-b border-[#dee7f2] outline-0 max-sm:text-base"
+      {faqData &&
+        faqData.map(({ id, question, answer }) => (
+          <Accordion
+            key={id}
+            open={open === id}
+            icon={<IconArrow id={id} open={open} />}
+            className="px-4 outline-0"
           >
-            {question}
-          </AccordionHeader>
-          <AccordionBody className="outline-0 max-sm:text-sm">
-            {answer}
-          </AccordionBody>
-        </Accordion>
-      ))}
+            <AccordionHeader
+              onClick={() => handleOpen(id)}
+              className="border-b border-[#dee7f2] outline-0 max-sm:text-base"
+            >
+              {question}
+            </AccordionHeader>
+            <AccordionBody className="outline-0 max-sm:text-sm">
+              {answer}
+            </AccordionBody>
+          </Accordion>
+        ))}
     </div>
   )
 }

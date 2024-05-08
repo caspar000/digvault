@@ -5,7 +5,7 @@ import { IDevice } from '@/types/devices-data.types'
 
 const initialState: IDevice[] = []
 
-export const userSlice = createSlice({
+export const deviceSlice = createSlice({
   name: 'devices',
   initialState,
   reducers: {
@@ -21,6 +21,6 @@ export const userSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { setUser } = userSlice.actions
+export const { setUser } = deviceSlice.actions
 
-export default userSlice.reducer
+export default deviceSlice.reducer

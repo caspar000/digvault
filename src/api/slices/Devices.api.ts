@@ -33,7 +33,7 @@ const createDeviceEntry = ({
 }
 
 export const fetchDevicesDataFromAPI = createAsyncThunk(
-  'faq/fetchFAQData',
+  'devices/fetchDevicesData',
   async (thunkAPI) => {
     const response = await axios.get(`${DOMAIN}/api/devices`)
 

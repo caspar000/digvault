@@ -60,12 +60,6 @@ export const HomePageSectionMining = () => {
     setSelectedQuantity(index)
   }
 
-  const dispatch = useDispatch<AppDispatch>()
-
-  useEffect(() => {
-    dispatch(fetchDevicesDataFromAPI())
-  }, [])
-
   const deviceList = useSelector((state: RootState) => state.devices)
 
   const selectedDeviceObject = deviceList[selectedDevice]

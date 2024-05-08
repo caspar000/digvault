@@ -1,4 +1,6 @@
 import Cookies from 'js-cookie'
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 import {
   BrowserRouter as Router,
   Navigate,
@@ -6,6 +8,8 @@ import {
   Routes
 } from 'react-router-dom'
 
+import { fetchDevicesDataFromAPI } from '@/api/slices/Devices.api'
+import { fetchFAQDataFromAPI } from '@/api/slices/Faq.api'
 import { AboutPage } from '@/pages/about/AboutPage'
 import { CloudPage } from '@/pages/cloud/CloudPage'
 import { DashboardPage } from '@/pages/dashboard/DashboardPage'
@@ -17,10 +21,17 @@ import { TermsPage } from '@/pages/legal/TermsPage'
 import { LoginPage } from '@/pages/login/LoginPage'
 import { MinersPage } from '@/pages/miners/MinersPage'
 import { SignUpPage } from '@/pages/signup/SignUpPage'
+import { AppDispatch } from '@/store'
 
 import { AppRoutePath } from './appRoutePath'
 
 const App = () => {
+  const dispatch = useDispatch<AppDispatch>()
+
+  useEffect(() => {
+    dispatch(fetchDevicesDataFromAPI())
+    dispatch(fetchFAQDataFromAPI())
+  }, [])
   return (
     <>
       <Router>
