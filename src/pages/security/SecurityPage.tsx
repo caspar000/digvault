@@ -88,13 +88,10 @@ export const SecurityPage = () => {
               the Cryptocurrency Security Standard Level 3.
             </Typography>
           </div>
-          <img src="/public/logos/security/KV00.png" />
+          <img src="/logos/security/KV00.png" />
         </div>
         <div className="grid grid-cols-2 py-20 max-sm:grid-cols-1 max-sm:gap-10">
-          <img
-            src="/public/logos/security/KV01.png"
-            className="max-sm:order-2"
-          />
+          <img src="/logos/security/KV01.png" className="max-sm:order-2" />
           <div className="my-auto flex flex-col items-center gap-4 pl-20 text-start max-sm:pl-0">
             <Typography className="w-full text-[24px] font-semibold leading-[32px] text-[#000]">
               Data Protection and Confidentialityt
@@ -120,7 +117,7 @@ export const SecurityPage = () => {
               investors.
             </Typography>
           </div>
-          <img src="/public/logos/security/KV02.png" />
+          <img src="/logos/security/KV02.png" />
         </div>
       </Container>
       <HomePageSectionWhy />
