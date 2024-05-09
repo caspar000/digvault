@@ -67,7 +67,7 @@ export const SecurityPage = () => {
             and companies.
           </Typography>
         </div>
-        <div className="grid grid-cols-3 gap-[20px] pb-20">
+        <div className="grid grid-cols-3 gap-[20px] pb-20 max-sm:grid-cols-1">
           {AuthorityLogos.map(({ img }, index) => (
             <div
               key={index}
@@ -77,8 +77,8 @@ export const SecurityPage = () => {
             </div>
           ))}
         </div>
-        <div className="grid grid-cols-2 py-20">
-          <div className="my-auto flex flex-col items-center gap-4 pr-20 text-start">
+        <div className="grid grid-cols-2 py-20 max-sm:grid-cols-1 max-sm:gap-10">
+          <div className="my-auto flex flex-col items-center gap-4 pr-20 text-start max-sm:pr-0">
             <Typography className="w-full text-[24px] font-semibold leading-[32px] text-[#000]">
               Cryptocurrency Security Standard Level 3
             </Typography>
@@ -90,9 +90,12 @@ export const SecurityPage = () => {
           </div>
           <img src="/public/logos/security/KV00.png" />
         </div>
-        <div className="grid grid-cols-2 py-20">
-          <img src="/public/logos/security/KV01.png" />
-          <div className="my-auto flex flex-col items-center gap-4 pl-20 text-start">
+        <div className="grid grid-cols-2 py-20 max-sm:grid-cols-1 max-sm:gap-10">
+          <img
+            src="/public/logos/security/KV01.png"
+            className="max-sm:order-2"
+          />
+          <div className="my-auto flex flex-col items-center gap-4 pl-20 text-start max-sm:pl-0">
             <Typography className="w-full text-[24px] font-semibold leading-[32px] text-[#000]">
               Data Protection and Confidentialityt
             </Typography>
@@ -105,8 +108,8 @@ export const SecurityPage = () => {
             </Typography>
           </div>
         </div>
-        <div className="grid grid-cols-2 py-20">
-          <div className="my-auto flex flex-col items-center gap-4 pr-20 text-start">
+        <div className="grid grid-cols-2 py-20 max-sm:grid-cols-1 max-sm:gap-10">
+          <div className="my-auto flex flex-col items-center gap-4 pr-20 text-start max-sm:pr-0">
             <Typography className="w-full text-[24px] font-semibold leading-[32px] text-[#000]">
               Accredited Information Security Management Systems
             </Typography>
