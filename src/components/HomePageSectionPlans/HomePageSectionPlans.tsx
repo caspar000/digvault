@@ -1,5 +1,7 @@
 import { Typography } from '@material-tailwind/react'
+import { Link } from 'react-router-dom'
 
+import { AppRoutePath } from '@/app/appRoutePath'
 import { Container } from '@/atoms/Container/Container'
 import { MininPlanMocks } from '@/mocks/HomePageMocks'
 
@@ -52,9 +54,11 @@ export const HomePageSectionPlans = () => {
                   </div>
                 </div>
                 <div className="mt-[20px] flex items-center justify-between">
-                  <button className="rounded-[32px] bg-[#F3FAFF] px-4 py-2 text-sm font-semibold leading-6 text-[#0667EA] hover:bg-[#fafdff] active:bg-[#F3FAFF]">
-                    Select
-                  </button>
+                  <Link to={AppRoutePath.SIGNUP()}>
+                    <button className="rounded-[32px] bg-[#F3FAFF] px-4 py-2 text-sm font-semibold leading-6 text-[#0667EA] hover:bg-[#fafdff] active:bg-[#F3FAFF]">
+                      Select
+                    </button>
+                  </Link>
                   <div className="flex items-center gap-2 rounded-[8px] bg-[#357A301A] px-2 py-1">
                     <Typography className="text-xs leading-4 text-[#000]">
                       Rating

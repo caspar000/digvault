@@ -20,6 +20,7 @@ import { PrivacyPage } from '@/pages/legal/PrivacyPage'
 import { TermsPage } from '@/pages/legal/TermsPage'
 import { LoginPage } from '@/pages/login/LoginPage'
 import { MinersPage } from '@/pages/miners/MinersPage'
+import { SecurityPage } from '@/pages/security/SecurityPage'
 import { SignUpPage } from '@/pages/signup/SignUpPage'
 import { AppDispatch } from '@/store'
 
@@ -42,6 +43,7 @@ const App = () => {
           <Route path={AppRoutePath.ABOUT()} element={<AboutPage />} />
           <Route path={AppRoutePath.SIGNUP()} element={<SignUpPage />} />
           <Route path={AppRoutePath.LOGIN()} element={<LoginPage />} />
+          <Route path={AppRoutePath.SECURITY()} element={<SecurityPage />} />
           <Route path={AppRoutePath.LEGAL()} element={<LegalPage />} />
           <Route path={AppRoutePath.PRIVACY()} element={<PrivacyPage />} />
           <Route path={AppRoutePath.TERMS()} element={<TermsPage />} />

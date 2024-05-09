@@ -30,12 +30,15 @@ export const Footer = () => {
               >
                 About us
               </a>
-              <a href="#" className="text-xs leading-[20px] text-[#8D91A1]">
+              <a
+                href={AppRoutePath.SECURITY()}
+                className="text-xs leading-[20px] text-[#8D91A1]"
+              >
                 Security
               </a>
-              <a href="#" className="text-xs leading-[20px] text-[#8D91A1]">
+              {/* <a href="#" className="text-xs leading-[20px] text-[#8D91A1]">
                 Licenses
-              </a>
+              </a> */}
             </div>
             <div className="flex w-[220px] flex-col gap-2">
               <p className="font-medium leading-6 text-[#fff]">Legal</p>
@@ -60,9 +63,9 @@ export const Footer = () => {
             </div>
           </div>
           {/* TODO: Language Switcher */}
-          <a href="#" className="text-xs leading-[20px] text-[#8D91A1]">
+          {/* <a href="#" className="text-xs leading-[20px] text-[#8D91A1]">
             Language Switcher
-          </a>
+          </a> */}
         </div>
       </Container>
       <Container className="pt-[48px]">

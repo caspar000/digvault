@@ -5,6 +5,7 @@ export const AppRoutePath = {
   CLOUD: () => '/cloud',
   MINERS: () => '/miners',
   ABOUT: () => '/about',
+  SECURITY: () => '/security',
   SIGNUP: () => '/signup',
   LOGIN: () => '/login',
   LEGAL: () => '/legal',
